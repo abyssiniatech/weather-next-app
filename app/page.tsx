@@ -1,24 +1,23 @@
-type props={
-  id:number
-  title:string
-  body:string
+type Post = {
+  id: number
+  title: string
+  body: string
 }
-const FetchApi = async() =>{
-  const res= await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data=await res.json();
 
-  return(
-      <div> 
-      {
-        data.map((list)=>{
-          return(
-            <ul>
-              <li></li>
-            </ul>
-          )
-        })
-      }
-      </div>
+type FetchApiProps = {
+  posts: Post[]
+}
+
+const FetchApi = ({ posts }: FetchApiProps) => {
+  return (
+    <div>
+      {posts.map((post) => (
+        <ul key={post.id}>
+          <li>{post.title}</li>
+        </ul>
+      ))}
+    </div>
   )
 }
+
 export default FetchApi
