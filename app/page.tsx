@@ -1,23 +1,8 @@
-type Post = {
-  id: number
-  title: string
-  body: string
-}
-
-type FetchApiProps = {
-  posts: Post[]
-}
-
-const FetchApi = ({ posts }: FetchApiProps) => {
-  return (
-    <div>
-      {posts.map((post) => (
-        <ul key={post.id}>
-          <li>{post.title}</li>
-        </ul>
-      ))}
-    </div>
+const Page =()=>{
+  return(
+     <div className="h-screen flex items-center text-3xl justify-center ">
+      <h1>Routes in next js</h1>
+     </div>
   )
 }
-
-export default FetchApi
+export default Page;
